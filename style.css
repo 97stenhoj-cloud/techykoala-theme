@@ -1,0 +1,284 @@
+/*
+Theme Name: TechyKoala
+Theme URI: https://techykoala.com
+Author: TechyKoala Team
+Author URI: https://techykoala.com
+Description: A cozy, gradient-themed WordPress theme for TechyKoala company website
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: techykoala
+*/
+
+/* ===== CSS Variables ===== */
+:root {
+  /* Cozy Gradient Colors from Connect App */
+  --primary-purple: #c084fc;
+  --primary-pink: #ec4899;
+  --accent-peach: #fdba74;
+  --soft-cream: #fef3c7;
+  
+  /* Background Gradients */
+  --bg-gradient: linear-gradient(180deg, #f3e8ff 0%, #fce7f3 50%, #fed7aa 100%);
+  --bg-gradient-alt: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 100%);
+  
+  /* Text Colors */
+  --text-primary: #78716c;
+  --text-dark: #44403c;
+  --text-light: #a8a29e;
+  
+  /* Spacing */
+  --section-padding: 80px;
+  --container-max: 1200px;
+  
+  /* Border Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+}
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-pink), var(--accent-peach));
+  color: white;
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(236, 72, 153, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+/* ===== Header/Navigation ===== */
+.site-header {
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.main-nav a {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.main-nav a:hover {
+  color: var(--primary-pink);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  padding: var(--section-padding) 0;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Cards/Sections ===== */
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Grid Layouts ===== */
+.grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  padding: 60px 0 30px;
+  margin-top: var(--section-padding);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-light);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+  }
+  
+  .main-nav ul {
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .hero {
+    min-height: 60vh;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
